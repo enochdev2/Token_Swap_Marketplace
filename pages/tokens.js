@@ -4,7 +4,7 @@ import  Header from "../components/Header";
 import  Footer from "../components/Footer";
 import  {getAllHistory} from "../utils/context";
 
-const tokens = () => {
+const Tokens = () => {
   const [history, setHistory] = useState([]);
   const loadData = async () => {
     const data = await getAllHistory();
@@ -27,4 +27,4 @@ const tokens = () => {
   );
 };
 
-export default tokens;
+export default Tokens;
