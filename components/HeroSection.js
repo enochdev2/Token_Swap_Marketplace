@@ -21,14 +21,14 @@ const HeroSection = () => {
           <a 
  rel="noopener noreferrer"
  href="#"
- className="py-3 px-8 text-lg font-semibold rounded bg-[7765F3] text-gray-900 "
+ className="py-3 px-8 text-lg font-semibold rounded bg-[#7765F3] text-gray-900 "
  >
 Get Start
  </a>
           <a 
  rel="noopener noreferrer"
  href="#"
- className="py-3 px-8 text-lg font-semibold border border-gray-900 "
+ className="py-3 px-8 text-lg font-semibold border border-gray-100 "
  >
 Swap ERC20
  </a>
