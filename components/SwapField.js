@@ -12,9 +12,7 @@ const SwapField = React.forwardRef(({obj}, inputRef) => {
       type={"number"}
       value={value}
       placeholder={"0.0"}
-      onChange={e => {
-        setValue(e.target.value)
-      }}
+      onChange={e => setValue(e.target.value)}
       />
 
       <Selector

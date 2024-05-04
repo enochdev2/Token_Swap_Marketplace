@@ -3,6 +3,7 @@ import {contract, tokenContract} from './contract';
 import {toEth, toWei} from './utils';
 
 export async function swapEthToToken(tokenName, amount) {
+    console.log(tokenName);
     try {
         let tx = {value: toWei(amount)};
 
@@ -24,7 +25,7 @@ export async function hasValidAllowance(owner, tokenName, amount) {
         const TokenContractObj = await tokenContract(address);
         const data = await TokenContractObj.allowance(
             owner,
-            "0x"
+            "0x975c086FF834402822B9b0a1A7020836314f23c8"
         );
 
         const result = BigNumber.from(data.toString()).gte(
@@ -88,7 +89,7 @@ export async function increaseAllowance(tokenName, amount) {
         
         const tokenContractObj = await tokenContract(address);
         const data = await tokenContractObj.approve(
-        "0x....",
+        "0x975c086FF834402822B9b0a1A7020836314f23c8",
         toWei(amount)
     );
 
@@ -127,3 +128,6 @@ function parseErrorMsg(e) {
     const json = JSON.parse(JSON.stringify(e));
     return json?.reason || json?.error?.message;
 }
+
+    //contract address for  polygonAmoy testnet "0x4e0320d417f41f2b3152D65f377A038B6Fc45491",
+    //contract address for  sepolia testnet "0x975c086FF834402822B9b0a1A7020836314f23c8",

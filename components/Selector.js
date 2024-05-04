@@ -1,5 +1,8 @@
 import React, {useEffect,  useState} from "react";
+import { Select } from '@chakra-ui/react';
+import { MdArrowDropDown } from 'react-icons/md'
 // import {Dropdown} from "@nextui-org/react"
+
 
 import {
   COIN_1,
@@ -42,26 +45,68 @@ const Selector = ({defaultValue, ignoreValue, setToken, id}) => {
   setMenuItems(getFilteredItems(ignoreValue));
   }, [ignoreValue]);
   
-  const yes = selectedItem === DEFAULT_VALUE
+  const handleChange = (event) => {
+    // Get the selected option's value
+    const selectedValue = event.target.value;
   
-  return (
-    <div>
+    // Update the state with the selected item
+    setSelectedItem(selectedValue);
+    setToken(selectedValue); // Assuming you want to set the token to the same value
+  
+    // Log the index of the selected item, if needed
+    const selectedIndex = menuItems.find(item => item.name === selectedValue);
+    console.log(selectedIndex);
+  };
 
-  {/* <Dropdown>
+  return (  
+<Select 
+ bg= "#7765F3" 
+ borderColor=""
+ color="white"
+ onChange={handleChange}
+//  icon={<MdArrowDropDown />}
+>
+  {menu.map((item) => (
+  <option
+  key={item.name}
+  value={item.name} >
+  {item.name}
+  </option>
+))}
+</Select>
+
+  );
+}; 
+export default Selector;
+
+
+
+
+{/* <Dropdown> 
     <Dropdown.Button
     css={{
-      backgroundColor: yes ? "#7765F3" : "#2c2f36",
+      backgroundColor: 
+      selectedItem === DEFAULT_VALUE ? "#7765F3" : "#2c2f36",
     }}
     >
       {selectedItem}
     </Dropdown.Button>
-    <Dropdown.Menu>
-
+    <Dropdown.Menu
+    aria-label="Dynamic Actions"
+    items={menuItems}
+    onAction={(key)=> {
+      setSelectedItem(key);
+      setToken(key);
+    }}
+    >
+{(item) => {
+  <Dropdown.Item
+  aria-label={id}
+  key={item.key}
+  color={item.key === "delete" ? "error" : "default"}
+  >
+  {item.name}
+  </Dropdown.Item>
+}}
     </Dropdown.Menu>
   </Dropdown> */}
-  </div>
-
-  )
-};
-
-export default Selector;

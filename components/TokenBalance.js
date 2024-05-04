@@ -44,7 +44,7 @@ const TokenBalance = ({name, walletAddress}) => {
     const address = await getTokenAddress(name);
     setTokenAddress(address);
   }
-  
+  console.log(tokenAddress)
 return (
 <div className="flex mx-2 border-[1px] rounded-l rounded-r-lg border-[#7765F3] ">
  <div className="flex item-center bg-zinc-900 text-zinc-300 w-fit p-2 px-3 rounded-l-lg">
