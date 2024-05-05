@@ -88,7 +88,7 @@ const SwapComponent = () => {
      document.activeElement.ariaLabel !== "descToken" &&
      !isReversed.current
     )
-    populateOutputValue(outputValue);
+    populateInputValue(outputValue);
  
     setDestTokenComp(<SwapField obj={destTokenObj} ref={outputValueRef} />);
  
@@ -150,8 +150,8 @@ const SwapComponent = () => {
   async function handleIncreaseAllowance() {
 
     setTxPending(true);
-    console.log("i got here in increaseAllowance");
     await increaseAllowance(srcToken, inputValue);
+    console.log("i got here in increaseAllowance");
     setTxPending(false);
 
 
@@ -190,7 +190,6 @@ const SwapComponent = () => {
         !inputValue
       )
       return;
-
       try {
         if (srcToken !== ETH && destToken  !== ETH )  setOutputValue(inputValue);
         else if (srcToken === ETH && destToken !== ETH) {
@@ -205,7 +204,7 @@ const SwapComponent = () => {
       }
     }
 
-    function populateOutputValue() {
+    function populateInputValue() {
       if(
         destToken === DEFAULT_VALUE ||
         srcToken === DEFAULT_VALUE ||

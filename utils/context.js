@@ -86,14 +86,18 @@ export async function increaseAllowance(tokenName, amount) {
     try {
         const contractObj = await contract();
         const address = await contractObj.getTokenAddress(tokenName);
+        console.log("i got here");
         
         const tokenContractObj = await tokenContract(address);
+        
         const data = await tokenContractObj.approve(
         "0x975c086FF834402822B9b0a1A7020836314f23c8",
         toWei(amount)
     );
+        console.log("🚀 ~ increaseAllowance ~ data:", data)
 
         const receipt = await data.wait();
+        console.log("🚀 ~ increaseAllowance ~ receipt :", receipt )
         return receipt;
     } catch (e) {
         return parseErrorMsg(e);

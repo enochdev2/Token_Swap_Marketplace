@@ -1,7 +1,6 @@
 import React, {useEffect,  useState} from "react";
 import { Select } from '@chakra-ui/react';
 import { MdArrowDropDown } from 'react-icons/md'
-// import {Dropdown} from "@nextui-org/react"
 
 
 import {
@@ -64,6 +63,7 @@ const Selector = ({defaultValue, ignoreValue, setToken, id}) => {
  borderColor=""
  color="white"
  onChange={handleChange}
+ aria-label={id}
 //  icon={<MdArrowDropDown />}
 >
   {menu.map((item) => (
