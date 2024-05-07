@@ -26,7 +26,7 @@
     "react-hot-toast": "^2.3.0",
     "react-icons": "^5.2.0",
     "viem": "2.8.12",
-    "wagmi": "2.5.11"
+    "wagmi": "2.5.22"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.8",
