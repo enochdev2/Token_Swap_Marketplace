@@ -151,7 +151,6 @@ const SwapComponent = () => {
 
     setTxPending(true);
     await increaseAllowance(srcToken, inputValue);
-    console.log("i got here in increaseAllowance");
     setTxPending(false);
 
 

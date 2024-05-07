@@ -11,7 +11,7 @@ export const tokenContract = async (address) => {
 
         const contractReader = new ethers.Contract( 
             address, 
-            CustomDexABI.abi, 
+            CustomTokenABI.abi, 
             signer
         );
 
