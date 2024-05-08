@@ -62,6 +62,7 @@ const Selector = ({defaultValue, ignoreValue, setToken, id}) => {
  bg= "#7765F3" 
  borderColor=""
  color="white"
+ padding="0"
  onChange={handleChange}
  aria-label={id}
 //  icon={<MdArrowDropDown />}
@@ -82,31 +83,3 @@ export default Selector;
 
 
 
-{/* <Dropdown> 
-    <Dropdown.Button
-    css={{
-      backgroundColor: 
-      selectedItem === DEFAULT_VALUE ? "#7765F3" : "#2c2f36",
-    }}
-    >
-      {selectedItem}
-    </Dropdown.Button>
-    <Dropdown.Menu
-    aria-label="Dynamic Actions"
-    items={menuItems}
-    onAction={(key)=> {
-      setSelectedItem(key);
-      setToken(key);
-    }}
-    >
-{(item) => {
-  <Dropdown.Item
-  aria-label={id}
-  key={item.key}
-  color={item.key === "delete" ? "error" : "default"}
-  >
-  {item.name}
-  </Dropdown.Item>
-}}
-    </Dropdown.Menu>
-  </Dropdown> */}
