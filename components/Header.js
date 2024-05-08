@@ -1,17 +1,23 @@
-import React, {useEffect, useState} from "react";
-import {ConnectButton} from "@rainbow-me/rainbowkit";
-import {useAccount} from "wagmi";
+import React, {useContext, useEffect, useState} from "react";
+// import {ConnectButton} from "@rainbow-me/rainbowkit";
+import { AiFillPlayCircle } from "react-icons/ai";
+
 import toast, {Toaster} from "react-hot-toast";
+import { ConnectWalletContext } from "../utils/ConnetWallet";
 
 
 import TokenBalance from "./TokenBalance";
 import Logo from "./SVG/Logo";
 import Menu from "./SVG/Menu";
+import { shortenAddress } from "../utils/utils";
 
 const Header = () => {
   const [tokenBalComp, setTokenBalComp] = useState();
+  const { currentAccount, connectWallet } = useContext(ConnectWalletContext);
 
-  const {address} = useAccount();
+
+  // const {address} = useAccount();
+  const address = currentAccount;
   
   const notifyConnectWallet = ()=> toast.error("Connect wallet.", {duration: 2000});
 
@@ -82,7 +88,31 @@ Pool
     <div className="items-center flex-shrink-0 hidden lg:flex">
     <TokenBalance name={"USD Coin"} walletAddress={address}/>
     <TokenBalance name={"SHIBA INU"} walletAddress={address}/>
-    <ConnectButton/>
+    {/* <ConnectButton/> */}
+    {!currentAccount ? (
+            <button
+              type="button"
+              onClick={connectWallet}
+              className="flex flex-row justify-center items-center my-5 bg-[#2952e3] p-3 rounded-full cursor-pointer hover:bg-[#2546bd]"
+            >
+              <AiFillPlayCircle className="text-white mr-2" />
+              <p className="text-white text-base font-semibold">
+                Connect Wallet
+              </p>
+            </button>
+          ) :
+           ( <button
+              type="button"
+             
+              className="flex flex-row justify-center items-center my-5 bg-[#2952e3] p-3 rounded-full cursor-pointer hover:bg-[#2546bd]"
+            >
+              <AiFillPlayCircle className="text-white mr-2" />
+              <p className="text-white text-base font-semibold">
+                Connected {shortenAddress(currentAccount)}
+              </p>
+            </button>
+          )
+          }
     </div>
     <button className="p-4 lg:hidden">
       <Menu/>

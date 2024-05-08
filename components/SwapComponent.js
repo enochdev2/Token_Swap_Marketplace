@@ -1,4 +1,4 @@
-import React, {useEffect, useRef, useState} from "react";
+import React, {useContext, useEffect, useRef, useState} from "react";
 import {
   hasValidAllowance,
   increaseAllowance,
@@ -13,15 +13,17 @@ import TransactionStatus  from "./TransactionStatus";
 import toast, {Toaster} from "react-hot-toast";
 import  {DEFAULT_VALUE, ETH} from "../utils/saleToken";
 import  {toWei, toEth} from "../utils/utils";
-import {useAccount} from "wagmi";
+import { ConnectWallet, ConnectWalletContext } from "../utils/ConnetWallet";
+import { Router, useRouter } from "next/router";
+
 
 const SwapComponent = () => {
   const [srcToken, setSrcToken] = useState(ETH);
   const [destToken, setDestToken] = useState(DEFAULT_VALUE);
-
+  
   const [inputValue, setInputValue] = useState();
   const [outputValue, setOutputValue] = useState();
-
+  
   const inputValueRef = useRef();
   const outputValueRef = useRef();
 
@@ -31,6 +33,8 @@ const SwapComponent = () => {
  const ENTER_AMOUNT = "Enter an amount";
  const CONNECT_WALLET = "Connect wallet";
  const SWAP = "Swap"; 
+
+ const router = useRouter()
 
   const srcTokenObj = {
     id:"srcToken",
@@ -58,8 +62,9 @@ const SwapComponent = () => {
 
    const notifyError = (msg) => toast.error(msg, {duration: 6000});
    const notifySuccess = () => toast.success("Transaction completed");
+   const { currentAccount, connectWallet } = useContext(ConnectWalletContext);
   
-   const {address}  = useAccount();
+   const address  = currentAccount;
 
    useEffect(() => {
 
@@ -122,6 +127,7 @@ const SwapComponent = () => {
       onClick={()=> {
         if(swapBtnText === INCREASE_ALLOWANCE) handleIncreaseAllowance();
         else if(swapBtnText === SWAP) handleSwap();
+        else if(swapBtnText === CONNECT_WALLET) connectWallet()
       }}
       >
 {swapBtnText}
@@ -173,7 +179,7 @@ const SwapComponent = () => {
     }
 
     function getSwapBtnClassName(){
-      let className = "p-4 w-full my-2 rounded-xl";
+      let className = "p-4 w-full my-2 cursor-pointer rounded-xl";
       className += 
       swapBtnText === ENTER_AMOUNT || swapBtnText === CONNECT_WALLET 
       ? "text-zinc-400 bg-zinc-800 pointer-events-none" 
@@ -230,7 +236,6 @@ const SwapComponent = () => {
       let receipt;
       
       if (srcToken === ETH && destToken !== ETH) {
-        console.log("i got to this place");
         receipt = await swapEthToToken(destToken, inputValue);
       } else if (srcToken !== ETH && destToken === ETH) {
         receipt = await swapTokenToEth(srcToken, inputValue);
@@ -238,8 +243,9 @@ const SwapComponent = () => {
 
       setTxPending(false);
 
-      if (receipt && !receipt.hasOwnProperty("transactionhash"))
-      notifyError(receipt);
+      router.push("/Tokens")
+
+      if (receipt && !receipt.hasOwnProperty("transactionhash")) notifyError(receipt);
     else notifySuccess();
 };
 

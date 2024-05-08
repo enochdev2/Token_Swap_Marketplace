@@ -1,5 +1,4 @@
-import React, { useEffect, useState, useRef } from "react";
-import { useAccount } from "wagmi";
+import React, { useEffect, useState, useRef, useContext } from "react";
 import {ethers} from "ethers";
 import toast, { Toaster } from "react-hot-toast";
 import {
@@ -15,10 +14,12 @@ import {
   getTokenBalance, 
   increaseAllowance
 } from "../utils/context";
+import { ConnectWalletContext } from "../utils/ConnetWallet";
 
 const Card = () => {
-  const { address } = useAccount();
-
+  const { currentAccount, connectWallet } = useContext(ConnectWalletContext);
+  
+  const address  = currentAccount;
   return (
     <section className="py-6 sm:py-12 bg-[#1A1A1A] text-gray-100">
       <div className="container p-6 mx-auto space-y-8">
