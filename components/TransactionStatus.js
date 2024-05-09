@@ -1,6 +1,7 @@
 import {Fragment, useRef, useState} from "react";
 // import {Loading} from "@nextui-org/react"
 import { Dialog, Transition } from "@headlessui/react";
+import Loader from "./Loader";
 
 export default function TransactionStatus ({}) {
 const [open, setOpen] = useState(true);
@@ -48,7 +49,7 @@ function handleClose(){
         >
         <div className="status inline-block align-bottom py-6 bg-white border rounded-lg text-center overflow-hidden shadow-xl transform transition-all md:w-[35%] sm:my-8 sm:align-middle sm:max-w-lg sm:w-full">
           <div className="px-4 py-4 items-center justify-center sm:px-6 sm:flex sm:flex-row-reverse">
-           {/* <Loading> Completing the transaction</Loading> */}
+           <Loader/>
           </div>
 
           <p className=" px-4 py-4 text-black items-center text-sm justify-center sm:px-6 sm:flex-row-reverse "> 

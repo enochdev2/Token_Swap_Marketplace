@@ -245,8 +245,8 @@ const SwapComponent = () => {
 
       router.push("/Tokens")
 
-      if (receipt && !receipt.hasOwnProperty("transactionhash")) notifyError(receipt);
-    else notifySuccess();
+    //   if (receipt && !receipt.hasOwnProperty("transactionhash")) notifyError(receipt);
+    // else notifySuccess();
 };
 
 function handleInsufficientAllowance() {
