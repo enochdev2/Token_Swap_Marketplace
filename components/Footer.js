@@ -93,7 +93,7 @@ const Footer = () => {
       </div>
     </div>
     <div className="py-6 text-sm text-center border-[#7765F3] border-t-[3px] text-gray-400">
-      &copy; 2003 @theDefiPrince. All rights reserved.
+      &copy; 2004 @theDefiPrince. All rights reserved.
     </div>
    </footer>
   );

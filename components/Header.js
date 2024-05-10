@@ -1,6 +1,7 @@
 import React, {useContext, useEffect, useState} from "react";
 // import {ConnectButton} from "@rainbow-me/rainbowkit";
 import { AiFillPlayCircle } from "react-icons/ai";
+import Link from "next/link"
 
 import toast, {Toaster} from "react-hot-toast";
 import { ConnectWalletContext } from "../utils/ConnetWallet";
@@ -57,13 +58,15 @@ Swap
  </a>
   </li>
   <li className="flex" >
+    <Link href="/Token">
   <a 
  rel="noopener noreferrer"
- href="/Tokens"
+//  href="/tokens"
  className="flex items-center px-4 -mb-1 dark:border-transparent"
  >
 Tokens
  </a>
+   </Link>
   </li>
   <li className="flex" >
   <a 

@@ -19,19 +19,19 @@ const HeroSection = () => {
           </p>
           <div className="flex flex-col space-y-4 sm:items-center sm:justify-center sm:flex-row sm:space-y-0 sm:space-x-4 lg:justify-start">
           <a 
- rel="noopener noreferrer"
- href="#"
- className="py-3 px-8 text-lg font-semibold rounded bg-[#7765F3] text-gray-900 "
- >
-Get Start
- </a>
+            rel="noopener noreferrer"
+            href="#"
+            className="py-3 px-8 text-lg font-semibold rounded bg-[#7765F3] text-gray-900 "
+            >
+                Get Start
+          </a>
           <a 
- rel="noopener noreferrer"
- href="#"
- className="py-3 px-8 text-lg font-semibold border border-gray-100 "
- >
-Swap ERC20
- </a>
+                rel="noopener noreferrer"
+                href="#"
+                className="py-3 px-8 text-lg font-semibold border border-gray-100 "
+                >
+                Swap ERC20
+          </a>
           </div>
         </div>
         <div className="flex items-center justify-center p-6 mt-8 lg:mt-0 h-72 sm:h-80 lg:h-96 xl:h-112 2xl:h-128">

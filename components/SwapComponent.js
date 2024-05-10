@@ -181,9 +181,9 @@ const SwapComponent = () => {
     function getSwapBtnClassName(){
       let className = "p-4 w-full my-2 cursor-pointer rounded-xl";
       className += 
-      swapBtnText === ENTER_AMOUNT || swapBtnText === CONNECT_WALLET 
+      swapBtnText === ENTER_AMOUNT 
       ? "text-zinc-400 bg-zinc-800 pointer-events-none" 
-      : "bg-blue-700";
+      : "bg-blue-400 text-zinc-100 text-2xl";
       className += swapBtnText === INCREASE_ALLOWANCE ? " bg-yellow-600" : "";
       return className;
     }
