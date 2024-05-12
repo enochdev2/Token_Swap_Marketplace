@@ -58,23 +58,23 @@ const Selector = ({defaultValue, ignoreValue, setToken, id}) => {
   };
 
   return (  
-<Select 
- bg= "#7765F3" 
- borderColor=""
- color="white"
- padding="0"
- onChange={handleChange}
- aria-label={id}
-//  icon={<MdArrowDropDown />}
->
-  {menu.map((item) => (
-  <option
-  key={item.name}
-  value={item.name} >
-  {item.name}
-  </option>
-))}
-</Select>
+    <Select 
+    bg= "#7765F3" 
+    borderColor=""
+    color="white"
+    padding="0"
+    onChange={handleChange}
+    aria-label={id}
+    //  icon={<MdArrowDropDown />}
+    >
+      {menu.map((item) => (
+      <option
+      key={item.name}
+      value={item.name} >
+      {item.name}
+      </option>
+      ))}
+    </Select>
 
   );
 }; 

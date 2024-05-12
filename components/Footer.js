@@ -31,8 +31,8 @@ const Footer = () => {
             {footerMenu.map((menu, i) => (
               <li key={i + 1}>
                   <a rel="noopener noreferrer" href="#">
-          {menu}
-        </a>
+                    {menu}
+                  </a>
               </li>
             ))}
           </ul>
@@ -40,54 +40,54 @@ const Footer = () => {
         <div className=" space-y-3 ">
           <h3 className="tracki uppercase text-[#7765F3]">Company</h3>
           <ul className="space-y-1 text-gray-50">
-          {["Privacy", "Terms of Service"].map((menu, i)=>(
-            <li key={i + 1}>
-                  <a rel="noopener noreferrer" href="#">
-          {menu}
-        </a>
-            </li>
-          ))}
+            {["Privacy", "Terms of Service"].map((menu, i)=>(
+              <li key={i + 1}>
+                    <a rel="noopener noreferrer" href="#">
+                      {menu}
+                    </a>
+              </li>
+            ))}
           </ul>
       </div>
       <div className=" space-y-3 ">
           <h3 className="tracki uppercase text-[#7765F3]">Developers</h3>
           <ul className="space-y-1 text-gray-50">
-          {["Public API", "Documention", "Guides"].map((menu, i)=>(
-            <li key={i + 1}>
-                  <a rel="noopener noreferrer" href="#">
-          {menu}
-        </a>
-            </li>
-          ))}
+            {["Public API", "Documention", "Guides"].map((menu, i)=>(
+              <li key={i + 1}>
+                    <a rel="noopener noreferrer" href="#">
+                  {menu}
+                    </a>
+              </li>
+            ))}
           </ul>
       </div>
       <div className=" space-y-3 ">
           <div className=" uppercase text-[#7765F33]">Social media</div>
           <div className=" flex justify-start space-x-3 text-gray-50">
-          <a 
-          rel="noopener noreferrer" 
-          href="#"
-          title="Facebook"
-          className="flex items-center p-1"
-          >
-            <Facebook />
-        </a>
-          <a 
-          rel="noopener noreferrer" 
-          href="#"
-          title="Twitter"
-          className="flex items-center p-1"
-          >
-          <Twitter />
-        </a>
-          <a 
-          rel="noopener noreferrer" 
-          href="#"
-          title="Insta"
-          className="flex items-center p-1"
-          >
-            <Insta />
-        </a>
+            <a 
+            rel="noopener noreferrer" 
+            href="#"
+            title="Facebook"
+            className="flex items-center p-1"
+            >
+                <Facebook />
+            </a>
+            <a 
+            rel="noopener noreferrer" 
+            href="#"
+            title="Twitter"
+            className="flex items-center p-1"
+            >
+            <Twitter />
+            </a>
+            <a 
+            rel="noopener noreferrer" 
+            href="#"
+            title="Insta"
+            className="flex items-center p-1"
+            >
+              <Insta />
+            </a>
           </div>
       </div>
       </div>

@@ -6,7 +6,7 @@ import { ConnectWallet } from '../utils/ConnetWallet';
 function MyApp({ Component, pageProps }) {
   return (
     <ConnectWallet>
-    <Component {...pageProps} />
+      <Component {...pageProps} />
     </ConnectWallet>
   );
 }

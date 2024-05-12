@@ -7,7 +7,7 @@ import  {getAllHistory} from "../utils/context";
 const Tokens = () => {
   const [history, setHistory] = useState([]);
   const loadData = async () => {
-    const data = await getAllHistory();
+  const data = await getAllHistory();
     
     setHistory(data.reverse());
   };

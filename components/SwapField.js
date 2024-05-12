@@ -15,12 +15,12 @@ const SwapField = React.forwardRef(({obj}, inputRef) => {
       onChange={e => setValue(e.target.value)}
       />
 
-      <Selector
-       id={id}
-       setToken={setToken}
-       defaultValue={defaultValue}
-       ignoreValue={ignoreValue}
-/>
+        <Selector
+        id={id}
+        setToken={setToken}
+        defaultValue={defaultValue}
+        ignoreValue={ignoreValue}
+        />
     </div>
   )
 

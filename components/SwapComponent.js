@@ -105,37 +105,37 @@ const SwapComponent = () => {
    
     return (
       <div className="border-[1px] rounded-l border-[#7765F3] bg-[#7765F3] w-[100%] p-4 px-6 rounded-xl ">
-      <div className="flex items-center justify-between py-4 px-1 ">
-    <p> Swap </p>
-    <MdArrowDropDown className="h-6" />
-      </div>
-      <div className=" relative bg-[#212429] p-4 py-6 rounded-xl  mb-2 border-[2px] border-transparent w-[100%] hover:border-zinc-600 ">
-    {srcTokenComp}
+        <div className="flex items-center justify-between py-4 px-1 ">
+            <p> Swap </p>
+            <MdArrowDropDown className="h-6" />
+        </div>
+        <div className=" relative bg-[#212429] p-4 py-6 rounded-xl  mb-2 border-[2px] border-transparent w-[100%] hover:border-zinc-600 ">
+          {srcTokenComp}
 
-    <MdKeyboardArrowDown
-    className="absolute left-1/2 -translate-x-1/2 -bottom-6 h-10 p-1 px-2 bg-[#241c1c] border-4 border-zinc-900 text-zinc-300 rounded-xl cursor-pointer hover:scale-110"
-    onClick={handleReverseExchange}
-    />
-      </div>
+          <MdKeyboardArrowDown
+          className="absolute left-1/2 -translate-x-1/2 -bottom-6 h-10 p-1 px-2 bg-[#241c1c] border-4 border-zinc-900 text-zinc-300 rounded-xl cursor-pointer hover:scale-110"
+          onClick={handleReverseExchange}
+          />
+        </div>
 
-      <div className=" bg-[#212429] w-[100%] p-4 py-6 rounded-xl  mt-2 border-[2px]  border-transparent hover:border-zinc-600">
-     {destTokenComp}
-      </div>
+        <div className=" bg-[#212429] w-[100%] p-4 py-6 rounded-xl  mt-2 border-[2px]  border-transparent hover:border-zinc-600">
+          {destTokenComp}
+        </div>
 
-      <button 
-      className={getSwapBtnClassName()}
-      onClick={()=> {
-        if(swapBtnText === INCREASE_ALLOWANCE) handleIncreaseAllowance();
-        else if(swapBtnText === SWAP) handleSwap();
-        else if(swapBtnText === CONNECT_WALLET) connectWallet()
-      }}
-      >
-{swapBtnText}
-      </button>
+        <button 
+        className={getSwapBtnClassName()}
+        onClick={()=> {
+          if(swapBtnText === INCREASE_ALLOWANCE) handleIncreaseAllowance();
+          else if(swapBtnText === SWAP) handleSwap();
+          else if(swapBtnText === CONNECT_WALLET) connectWallet()
+        }}
+        >
+          {swapBtnText}
+        </button>
 
-    {txPending  && <TransactionStatus />}
+        {txPending  && <TransactionStatus />}
 
-    <Toaster/>
+        <Toaster/>
       </div>
     );
 
